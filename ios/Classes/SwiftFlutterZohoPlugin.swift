@@ -18,7 +18,7 @@ public class SwiftFlutterZohoPlugin: NSObject, FlutterPlugin {
     
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         switch (call.method) {
-        case "showNativeChat":
+        case "showNativeView":
             print("ZOHO")
             let zohoDictionary = call.arguments as? Dictionary<String, String>
             let config = ZDPHomeConfiguration()
