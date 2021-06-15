@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="co.foreman.app.flutter_zoho">
+
+    <application>
+        <activity android:name=".ZohoSDKStarterActivity"></activity>
+    </application>
+</manifest>
