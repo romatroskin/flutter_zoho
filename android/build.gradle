@@ -31,6 +31,6 @@ android {
 }
 
 dependencies {
-    implementation 'com.zoho.desk:asapsdk:1.2.7'
+    implementation 'com.zoho.desk:asapsdk:2.0.2'
     implementation 'org.jetbrains:annotations:15.0'
 }
