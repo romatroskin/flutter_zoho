@@ -60,7 +60,7 @@ public class SwiftFlutterZohoPlugin: NSObject, FlutterPlugin {
         let instance = SwiftFlutterZohoPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
-    Ï
+    
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         result("iOS " + UIDevice.current.systemVersion)
     }
