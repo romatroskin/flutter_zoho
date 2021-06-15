@@ -4,6 +4,7 @@ import ZohoDeskPortalSDK
 
 public class SwiftFlutterZohoPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
+    let controller : FlutterViewController = window?.rootViewController as! FlutterViewController;
     let channel = FlutterMethodChannel(name: "flutter_zoho", binaryMessenger: registrar.messenger())
     
     channel.setMethodCallHandler {(call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
@@ -14,12 +15,12 @@ public class SwiftFlutterZohoPlugin: NSObject, FlutterPlugin {
                 config.enableCreateTicket = true
                 config.enableMyTicket = true
                 config.enableCommunity = true
-                ZohoDeskPortalSDK.initializeSDK(zohoDictionary?["OrgId"] ?? "",
-                appId: zohoDictionary?["AppId"] ?? "", dataCenter: ZDDataCenter.EU, configuration: config)
+                ZohoDeskPortalSDK.initializeSDK(zohoDictionary?["orgId"] ?? "",
+                appId: zohoDictionary?["appId"] ?? "", dataCenter: ZDDataCenter.EU, configuration: config)
                
                
                
-                    ZohoDeskPortalSDK.set(jwtUserIdentifier: zohoDictionary?["AccessToken"] ?? "", onComplition: {
+                    ZohoDeskPortalSDK.set(jwtUserIdentifier: zohoDictionary?["accessToken"] ?? "", onComplition: {
                         DispatchQueue.main.async {
                                         ZohoDeskPortalSDK.showHomePage(controller: controller,withConfiguration: config)
                         }
