@@ -10,6 +10,7 @@ public class SwiftFlutterZohoPlugin: NSObject, FlutterPlugin {
         
         channel.setMethodCallHandler {(call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
             if (call.method == "showNativeView") {
+                print("ZOHO")
                 let zohoDictionary = call.arguments as? Dictionary<String, String>
                 let config = ZDPHomeConfiguration()
                 config.enableHelpCenter = true
