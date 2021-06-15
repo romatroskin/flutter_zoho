@@ -1,0 +1,87 @@
+PODS:
+  - Flutter (1.0.0)
+  - flutter_zoho (0.0.1):
+    - Flutter
+    - ZohoDeskPortalCore
+    - ZohoDeskPortalServices
+  - MobilistenBeta (4.0.0-beta)
+  - ZDThemeKit (1.1)
+  - ZohoDeskPortalAPIKit (2.0.6)
+  - ZohoDeskPortalChat (2.0.6):
+    - MobilistenBeta (= 4.0.0-beta)
+    - ZDThemeKit (= 1.1)
+    - ZohoDeskPortalAPIKit (= 2.0.6)
+    - ZohoDeskPortalConfiguration (= 2.0.6)
+  - ZohoDeskPortalCommunity (2.0.6):
+    - ZDThemeKit (= 1.1)
+    - ZohoDeskPortalAPIKit (= 2.0.6)
+    - ZohoDeskPortalConfiguration (= 2.0.6)
+  - ZohoDeskPortalConfiguration (2.0.6):
+    - ZDThemeKit (= 1.1)
+    - ZohoDeskPortalAPIKit (= 2.0.6)
+  - ZohoDeskPortalCore (2.0.6):
+    - ZDThemeKit (= 1.1)
+    - ZohoDeskPortalAPIKit (= 2.0.6)
+    - ZohoDeskPortalCommunity (= 2.0.6)
+    - ZohoDeskPortalConfiguration (= 2.0.6)
+    - ZohoDeskPortalKB (= 2.0.6)
+    - ZohoDeskPortalTicket (= 2.0.6)
+  - ZohoDeskPortalKB (2.0.6):
+    - ZDThemeKit (= 1.1)
+    - ZohoDeskPortalAPIKit (= 2.0.6)
+    - ZohoDeskPortalConfiguration (= 2.0.6)
+  - ZohoDeskPortalServices (2.0.6):
+    - MobilistenBeta (= 4.0.0-beta)
+    - ZDThemeKit (= 1.1)
+    - ZohoDeskPortalAPIKit (= 2.0.6)
+    - ZohoDeskPortalChat (= 2.0.6)
+    - ZohoDeskPortalCommunity (= 2.0.6)
+    - ZohoDeskPortalConfiguration (= 2.0.6)
+    - ZohoDeskPortalCore (= 2.0.6)
+    - ZohoDeskPortalKB (= 2.0.6)
+    - ZohoDeskPortalTicket (= 2.0.6)
+  - ZohoDeskPortalTicket (2.0.6):
+    - ZDThemeKit (= 1.1)
+    - ZohoDeskPortalAPIKit (= 2.0.6)
+    - ZohoDeskPortalConfiguration (= 2.0.6)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - flutter_zoho (from `.symlinks/plugins/flutter_zoho/ios`)
+
+SPEC REPOS:
+  trunk:
+    - MobilistenBeta
+    - ZDThemeKit
+    - ZohoDeskPortalAPIKit
+    - ZohoDeskPortalChat
+    - ZohoDeskPortalCommunity
+    - ZohoDeskPortalConfiguration
+    - ZohoDeskPortalCore
+    - ZohoDeskPortalKB
+    - ZohoDeskPortalServices
+    - ZohoDeskPortalTicket
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  flutter_zoho:
+    :path: ".symlinks/plugins/flutter_zoho/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  flutter_zoho: af4a2b0e3fb9d947f5a8261b1c01d166b4e62525
+  MobilistenBeta: e3c2e3e3a7e525eca7eb239a4e877f064b4171b8
+  ZDThemeKit: ceea7c1ac8d90810a74c23db9f46f649e626f03b
+  ZohoDeskPortalAPIKit: b3bb4a155da2dd23d21ad24afc109a257cbb427d
+  ZohoDeskPortalChat: d0e1da747402935eb7e8924fb142c0751e1b9b22
+  ZohoDeskPortalCommunity: dc3e7eb5f3b308c3524fdfa23b481b7ba336106a
+  ZohoDeskPortalConfiguration: 2cd6890edac98288ae639c7411bdb7900cacf830
+  ZohoDeskPortalCore: 3a3da16479fb48315c8ba8ac38508256e2bceab7
+  ZohoDeskPortalKB: 3ca2bd98a37ff696d7a55a6b8cbafdd6152571df
+  ZohoDeskPortalServices: ccbe024460ce554ca73d2bd02259b143c499288d
+  ZohoDeskPortalTicket: 1976894ac6227a5f5a1c83dedc7651786e37dbca
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.10.1
