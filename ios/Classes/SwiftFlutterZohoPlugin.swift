@@ -1,6 +1,6 @@
 import Flutter
 import UIKit
-import ZohoDeskSDK
+import ZohoDeskPortalSDK
 
 public class SwiftFlutterZohoPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
