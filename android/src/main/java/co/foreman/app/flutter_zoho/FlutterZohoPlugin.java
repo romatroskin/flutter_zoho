@@ -67,9 +67,9 @@ public class FlutterZohoPlugin implements FlutterPlugin, MethodCallHandler, Acti
 
       try {
         JSONObject params = new JSONObject(map);
-        OrgId = Long.parseLong(params.getString("OrgId"));
-        AppId = params.getString("AppId");
-        accessToken = params.getString("AccessToken");
+        OrgId = Long.parseLong(params.getString("orgId"));
+        AppId = params.getString("appId");
+        accessToken = params.getString("accessToken");
 
       } catch (JSONException e) {
         e.printStackTrace();
