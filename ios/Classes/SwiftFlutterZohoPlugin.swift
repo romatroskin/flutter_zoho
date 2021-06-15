@@ -1,6 +1,6 @@
 import Flutter
 import UIKit
-import ZohoDeskPortalSDK
+import ZohoDeskSDK
 
 public class SwiftFlutterZohoPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
@@ -15,14 +15,14 @@ public class SwiftFlutterZohoPlugin: NSObject, FlutterPlugin {
                 config.enableCreateTicket = true
                 config.enableMyTicket = true
                 config.enableCommunity = true
-                ZohoDeskPortalSDK.initializeSDK(zohoDictionary?["orgId"] ?? "",
+                ZohoDeskSDK.initializeSDK(zohoDictionary?["orgId"] ?? "",
                 appId: zohoDictionary?["appId"] ?? "", dataCenter: ZDDataCenter.EU, configuration: config)
                
                
                
-                    ZohoDeskPortalSDK.set(jwtUserIdentifier: zohoDictionary?["accessToken"] ?? "", onComplition: {
+                    ZohoDeskSDK.set(jwtUserIdentifier: zohoDictionary?["accessToken"] ?? "", onComplition: {
                         DispatchQueue.main.async {
-                                        ZohoDeskPortalSDK.showHomePage(controller: controller,withConfiguration: config)
+                                        ZohoDeskSDK.showHomePage(controller: controller,withConfiguration: config)
                         }
                                         result(String("true"))
                                       }, onError: { (error) in
@@ -36,7 +36,7 @@ public class SwiftFlutterZohoPlugin: NSObject, FlutterPlugin {
                 
             }else if(call.method=="setFCMId"){
                 let fcmId = call.arguments as? Dictionary<String, String>
-                ZohoDeskPortalSDK.enablePushNotification(deviceToken: fcmId?["fcmId"] ?? "", mode: .production)
+                ZohoDeskSDK.enablePushNotification(deviceToken: fcmId?["fcmId"] ?? "", mode: .production)
             }
             else{
                 result(FlutterError(code: "400", message: "server error", details: "false"))
