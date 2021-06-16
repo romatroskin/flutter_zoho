@@ -75,9 +75,9 @@ public class FlutterZohoPlugin implements FlutterPlugin, MethodCallHandler, Acti
 
 //      try {
 //        JSONObject params = new JSONObject(map);
-//        String orgId = call.argument("orgId");
-//        assert orgId != null;
-        OrgId = Long.parseLong(String.valueOf(call.argument("orgId")));
+        String orgId = call.argument("orgId");
+        assert orgId != null;
+        OrgId = Long.parseLong(orgId);
         AppId = call.argument("appId");
         accessToken = call.argument("accessToken");
 
