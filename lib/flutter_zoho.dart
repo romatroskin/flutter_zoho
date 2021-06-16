@@ -13,13 +13,9 @@ class FlutterZoho {
   //   }
   // }
 
-  static Future<String?> showNativeView(
-      {required String ordId,
-      required String appId,
-      required String accessToken}) async {
+  static Future<String?> showNativeView(Map<String, dynamic> args) async {
     try {
-      return _channel.invokeMethod('showNativeView',
-          {'ordId': ordId, 'appId': appId, 'accessToken': accessToken});
+      return _channel.invokeMethod('showNativeView', args);
     } on PlatformException catch (e) {
       throw 'Error ${e.message}';
     }

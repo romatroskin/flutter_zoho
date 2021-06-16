@@ -71,21 +71,19 @@ public class FlutterZohoPlugin implements FlutterPlugin, MethodCallHandler, Acti
 
     if (call.method.equals("showNativeView")) {
 
-      // HashMap<String, Object> map = call.arguments();
+       HashMap<String, Object> map = call.arguments();
 
-//      try {
-//        JSONObject params = new JSONObject(map);
-        String orgId = call.argument("orgId");
-        assert orgId != null;
-        OrgId = Long.parseLong(orgId);
-        AppId = call.argument("appId");
-        accessToken = call.argument("accessToken");
+      try {
+        JSONObject params = new JSONObject(map);
+        OrgId = Long.parseLong(params.getString("orgId"));
+        AppId = params.getString("appId");
+        accessToken = params.getString("accessToken");
 
-//      } catch (JSONException e) {
-//        e.printStackTrace();
-//
-//        return;
-//      }
+      } catch (JSONException e) {
+        e.printStackTrace();
+
+        return;
+      }
 
       ZohoDeskPortalSDK.Logger.enableLogs();
 
