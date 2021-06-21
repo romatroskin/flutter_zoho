@@ -94,7 +94,7 @@ public class FlutterZohoPlugin implements FlutterPlugin, MethodCallHandler, Acti
                             ZDPortalHome.show(activity, homeConfiguration);
                             result.success("true");
                         } catch(Error e) {
-                            Log.d("Error", e.getMessage());
+                            e.getMessage();
                         }
                     }
 
