@@ -90,10 +90,12 @@ public class FlutterZohoPlugin implements FlutterPlugin, MethodCallHandler, Acti
                 apiProvider.setUserToken(accessToken, new ZDPortalCallback.SetUserCallback() {
                     @Override
                     public void onUserSetSuccess() {
-
-                        ZDPortalHome.show(activity, homeConfiguration);
-//          apiProvider.startDeskHomeScreen(activity);
-                        result.success("true");
+                        try {
+                            ZDPortalHome.show(activity, homeConfiguration);
+                            result.success("true");
+                        } catch(Error e) {
+                            Log.d("Error", e.getMessage());
+                        }
                     }
 
                     @Override
