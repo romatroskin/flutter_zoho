@@ -96,7 +96,7 @@ public class FlutterZohoPlugin implements FlutterPlugin, MethodCallHandler, Acti
 
                     @Override
                     public void onException(ZDPortalException e) {
-                        result.error("400", e.getMessage(), "false");
+                        // result.error("400", e.getMessage(), "false");
                     }
                 });
             } else {
