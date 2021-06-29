@@ -7,7 +7,7 @@ class FlutterZoho {
 
   static Future<String?> setFCMId(Map<String, dynamic> args) async {
     try {
-      return _channel.invokeMethod('setFCMId', args);
+      return _channel.invokeMethod('initZoho', args);
     } on PlatformException catch (e) {
       throw 'Error ${e.message}';
     }

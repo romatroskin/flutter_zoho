@@ -13,7 +13,7 @@ public class SwiftFlutterZohoPlugin: NSObject, FlutterPlugin {
     
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         switch (call.method) {
-        case "showNativeView":
+        case "initZoho":
             let zohoDictionary = call.arguments as? Dictionary<String, String>
             let config = ZDPHomeConfiguration()
             config.enableHelpCenter = true
@@ -22,9 +22,14 @@ public class SwiftFlutterZohoPlugin: NSObject, FlutterPlugin {
             config.enableCommunity = true
             ZohoDeskPortalSDK.initialize(orgID: zohoDictionary?["orgId"] ?? "",
                                          appID: zohoDictionary?["appId"] ?? "", dataCenter: ZDPDataCenter.EU)
+            ZohoDeskPortalSDK.enablePushNotification(deviceToken: zohoDictionary?["fcmId"] ?? "", mode: .production)
+            break;
             
+            
+        case "showNativeView":
+            let accessToken = call.arguments as? Dictionary<String, String>
             if !ZohoDeskPortalSDK.isUserLoggedIn{
-                ZohoDeskPortalSDK.login(withUserToken: zohoDictionary?["accessToken"] ?? "") { (isSuccess: Bool) in
+                ZohoDeskPortalSDK.login(withUserToken: accessToken?["accessToken"] ?? "") { (isSuccess: Bool) in
                     if(isSuccess) {
                         ZDPortalHome.show(withConfiguration: config)
                         result(String("true"));
@@ -36,11 +41,6 @@ public class SwiftFlutterZohoPlugin: NSObject, FlutterPlugin {
             } else {
                 // user logged in already
             }
-            break;
-            
-        case "setFCMId":
-            let fcmId = call.arguments as? Dictionary<String, String>
-            ZohoDeskPortalSDK.enablePushNotification(deviceToken: fcmId?["fcmId"] ?? "", mode: .production)
             break;
             
         default:
