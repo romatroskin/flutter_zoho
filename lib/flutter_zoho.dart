@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 class FlutterZoho {
   static const MethodChannel _channel = const MethodChannel('flutter_zoho');
 
-  static Future<String?> setFCMId(Map<String, dynamic> args) async {
+  static Future<String?> initZoho(Map<String, dynamic> args) async {
     try {
       return _channel.invokeMethod('initZoho', args);
     } on PlatformException catch (e) {
