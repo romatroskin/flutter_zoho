@@ -52,13 +52,6 @@ public class FlutterZohoPlugin implements FlutterPlugin, MethodCallHandler, Acti
 
             ZohoDeskPortalSDK.Logger.enableLogs();
 
-            final ZDPHomeConfiguration homeConfiguration = new ZDPHomeConfiguration.Builder()
-                    .showCommunity(true)
-                    .showCreateTicket(true)
-                    .showNavDrawer(true)
-                    .showMyTickets(true)
-                    .build();
-
             deskInstance = ZohoDeskPortalSDK.getInstance(context.getApplicationContext());
             deskInstance.initDesk(Long.parseLong(orgId), appId, ZohoDeskPortalSDK.DataCenter.EU);
             deskInstance.enablePush(fcm);
@@ -67,6 +60,13 @@ public class FlutterZohoPlugin implements FlutterPlugin, MethodCallHandler, Acti
 
         if (call.method.equals("showNativeView")) {
             String accessToken = call.argument("accessToken");
+
+            final ZDPHomeConfiguration homeConfiguration = new ZDPHomeConfiguration.Builder()
+            .showCommunity(true)
+            .showCreateTicket(true)
+            .showNavDrawer(true)
+            .showMyTickets(true)
+            .build();
 
             deskInstance = ZohoDeskPortalSDK.getInstance(context.getApplicationContext());
             if (!deskInstance.isUserSignedIn()) {

@@ -15,11 +15,7 @@ public class SwiftFlutterZohoPlugin: NSObject, FlutterPlugin {
         switch (call.method) {
         case "initZoho":
             let zohoDictionary = call.arguments as? Dictionary<String, String>
-            let config = ZDPHomeConfiguration()
-            config.enableHelpCenter = true
-            config.enableCreateTicket = true
-            config.enableMyTicket = true
-            config.enableCommunity = true
+            
             ZohoDeskPortalSDK.initialize(orgID: zohoDictionary?["orgId"] ?? "",
                                          appID: zohoDictionary?["appId"] ?? "", dataCenter: ZDPDataCenter.EU)
             ZohoDeskPortalSDK.enablePushNotification(deviceToken: zohoDictionary?["fcmId"] ?? "", mode: .production)
@@ -28,6 +24,13 @@ public class SwiftFlutterZohoPlugin: NSObject, FlutterPlugin {
             
         case "showNativeView":
             let accessToken = call.arguments as? Dictionary<String, String>
+
+            let config = ZDPHomeConfiguration()
+            config.enableHelpCenter = true
+            config.enableCreateTicket = true
+            config.enableMyTicket = true
+            config.enableCommunity = true
+
             if !ZohoDeskPortalSDK.isUserLoggedIn{
                 ZohoDeskPortalSDK.login(withUserToken: accessToken?["accessToken"] ?? "") { (isSuccess: Bool) in
                     if(isSuccess) {
