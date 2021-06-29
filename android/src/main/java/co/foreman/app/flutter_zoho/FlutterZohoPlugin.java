@@ -60,7 +60,7 @@ public class FlutterZohoPlugin implements FlutterPlugin, MethodCallHandler, Acti
                     .build();
 
             deskInstance = ZohoDeskPortalSDK.getInstance(context.getApplicationContext());
-            deskInstance.initDesk(orgId, appId, ZohoDeskPortalSDK.DataCenter.EU);
+            deskInstance.initDesk(Long.parseLong(orgId), appId, ZohoDeskPortalSDK.DataCenter.EU);
             deskInstance.enablePush(fcm);
             // deskInstance.setThemeResource(R.style.deskTheme);
         }
