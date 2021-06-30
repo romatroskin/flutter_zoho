@@ -56,6 +56,7 @@ public class FlutterZohoPlugin implements FlutterPlugin, MethodCallHandler, Acti
             deskInstance.initDesk(Long.parseLong(orgId), appId, ZohoDeskPortalSDK.DataCenter.EU);
             deskInstance.enablePush(fcm);
             // deskInstance.setThemeResource(R.style.deskTheme);
+            result.success("true");
         }
 
         if (call.method.equals("showNativeView")) {

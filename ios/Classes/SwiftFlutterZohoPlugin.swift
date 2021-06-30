@@ -19,6 +19,8 @@ public class SwiftFlutterZohoPlugin: NSObject, FlutterPlugin {
             ZohoDeskPortalSDK.initialize(orgID: zohoDictionary?["orgId"] ?? "",
                                          appID: zohoDictionary?["appId"] ?? "", dataCenter: ZDPDataCenter.EU)
             ZohoDeskPortalSDK.enablePushNotification(deviceToken: zohoDictionary?["fcmId"] ?? "", mode: .production)
+
+            result(String("true"));
             break;
             
             
