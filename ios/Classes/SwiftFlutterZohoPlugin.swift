@@ -46,9 +46,27 @@ public class SwiftFlutterZohoPlugin: NSObject, FlutterPlugin {
             } else {
                 // user logged in already
                 ZDPortalHome.show(withConfiguration: config)
-                        result(String("true"));
+                result(String("true"));
             }
             break;
+
+        case "changeLanguage":
+            let language = call.arguments as? Dictionary<String, String>
+
+            ZDPortalConfiguration.setSDKLanguage(language?["language"] ?? "")  
+            result(String("true"));
+            break;
+
+        case "logout":
+            ZohoDeskPortalSDK.logout { (isSuccess: Bool ) in
+                if(isSuccess) {
+                    result(String("true"));
+                        
+                }else{
+                    result(FlutterError(code: "400", message: "server error", details: "false"));
+                }
+            }   
+            break;   
             
         default:
             result(FlutterError(code: "400", message: "server error", details: "false"))

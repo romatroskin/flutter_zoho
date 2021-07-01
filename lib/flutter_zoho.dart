@@ -20,4 +20,20 @@ class FlutterZoho {
       throw 'Error ${e.message}';
     }
   }
+
+  static Future<String?> changeLanguage(Map<String, dynamic> args) async {
+    try {
+      return _channel.invokeMethod('changeLanguage', args);
+    } on PlatformException catch (e) {
+      throw 'Error ${e.message}';
+    }
+  }
+
+  static Future<String?> logout(Map<String, dynamic> args) async {
+    try {
+      return _channel.invokeMethod('logout', args);
+    } on PlatformException catch (e) {
+      throw 'Error ${e.message}';
+    }
+  }
 }

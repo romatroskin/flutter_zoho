@@ -88,6 +88,27 @@ public class FlutterZohoPlugin implements FlutterPlugin, MethodCallHandler, Acti
                 result.success("true");
             }
         }
+
+        if (call.method.equals("changeLanguage")) {
+            String language = call.argument("language");
+
+            ZDPortalConfiguration.setLanguage(language);
+            result.success("true");
+        }
+
+        if (call.method.equals("logout")) {
+            deskInstance = ZohoDeskPortalSDK.getInstance(context.getApplicationContext());
+            deskInstance.logout(new ZDPortalCallback.LogoutCallback() { 
+                @Override 
+                public void onLogoutSuccess() { 
+                   //User logged out 
+                   result.success("true");
+                } 
+                @Override 
+                public void onException(ZDPortalException e) { 
+                } 
+             });
+        }
     }
 
     @Override
