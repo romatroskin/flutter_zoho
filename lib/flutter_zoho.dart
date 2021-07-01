@@ -29,9 +29,9 @@ class FlutterZoho {
     }
   }
 
-  static Future<String?> logout(Map<String, dynamic> args) async {
+  static Future<String?> logout() async {
     try {
-      return _channel.invokeMethod('logout', args);
+      return _channel.invokeMethod('logout');
     } on PlatformException catch (e) {
       throw 'Error ${e.message}';
     }
