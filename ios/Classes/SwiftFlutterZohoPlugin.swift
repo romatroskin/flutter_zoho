@@ -45,6 +45,8 @@ public class SwiftFlutterZohoPlugin: NSObject, FlutterPlugin {
                 }
             } else {
                 // user logged in already
+                ZDPortalHome.show(withConfiguration: config)
+                        result(String("true"));
             }
             break;
             
