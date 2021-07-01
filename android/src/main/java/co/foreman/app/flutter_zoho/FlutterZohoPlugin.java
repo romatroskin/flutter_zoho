@@ -11,6 +11,7 @@ import com.zoho.desk.asap.ZDPortalHome;
 import com.zoho.desk.asap.api.ZDPortalCallback;
 import com.zoho.desk.asap.api.ZDPortalException;
 import com.zoho.desk.asap.api.ZohoDeskPortalSDK;
+import com.zoho.desk.asap.common.ZDPortalConfiguration;
 
 import org.json.JSONException;
 import org.json.JSONObject;
