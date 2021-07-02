@@ -2,6 +2,7 @@ import Flutter
 import UIKit
 import ZohoDeskPortalAPIKit
 import ZohoDeskPortalCore
+import ZDPortalConfiguration
 
 public class SwiftFlutterZohoPlugin: NSObject, FlutterPlugin {
     public static func register(with registrar: FlutterPluginRegistrar) {
