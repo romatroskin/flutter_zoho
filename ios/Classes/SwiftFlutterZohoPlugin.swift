@@ -2,7 +2,7 @@ import Flutter
 import UIKit
 import ZohoDeskPortalAPIKit
 import ZohoDeskPortalCore
-import ZDPortalConfiguration
+import ZohoDeskPortalConfiguration
 
 public class SwiftFlutterZohoPlugin: NSObject, FlutterPlugin {
     public static func register(with registrar: FlutterPluginRegistrar) {
@@ -54,7 +54,7 @@ public class SwiftFlutterZohoPlugin: NSObject, FlutterPlugin {
         case "changeLanguage":
             let language = call.arguments as? Dictionary<String, String>
 
-            ZDPortalConfiguration.setSDKLanguage(language?["language"] ?? "")  
+            ZDPortalConfiguration.setSDKLanguage(language?["language"] ?? "")
             result(String("true"));
             break;
 
